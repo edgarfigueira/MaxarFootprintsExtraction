@@ -11,7 +11,7 @@ The py codes are numbered sequentially, and they provide a programmatic solution
 Sometimes, geospatial datasets can be very large and complex. Given that fact, programming approaches are very common to achieve the desired data.
 the codes in this repository are made to extract, process, and convert shapefiles (polygons in this case).
 
-#How to??
+#How to
 1 - First, you should place these codes within the folder to where you want to extract your beautiful footprints;
 2 - At 0_CreateDirs.py you should redifine the path to the 'base_folder' (Which should be the folder where you pasted the codes);
 3 - At 1st_csv_zip_To_Geojson.py I recommend changing the 'location' variable according with the desired country;
