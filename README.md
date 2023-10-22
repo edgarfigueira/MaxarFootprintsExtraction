@@ -12,6 +12,7 @@ The py codes are numbered sequentially, and they provide a programmatic solution
 Sometimes, geospatial datasets can be very large and complex. Given that fact, programming approaches are very common to achieve the desired data.
 the codes in this repository are made to extract, process, and convert shapefiles (polygons in this case).
 
+
 # How to
 1 - First, you should place these codes within the folder to where you want to extract your beautiful footprints;
 
@@ -23,6 +24,7 @@ the codes in this repository are made to extract, process, and convert shapefile
 
 5 - Last but not least, the 3rd_ConversionGeojsonToShapefile.py file is using ogr2ogr (see documentation here: https://gdal.org/programs/ogr2ogr.html)
 This approach allows to convert the data from GeoJson into shapefile with ease.
+
 
 # Next steps
 I think the whole code could be stored at a single .py file. For development, I find this step-by-step approach a great way to fix issues before merging all files.
