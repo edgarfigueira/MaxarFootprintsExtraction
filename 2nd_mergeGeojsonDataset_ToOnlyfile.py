@@ -1,5 +1,6 @@
 import geopandas as gpd
 import os
+import pandas as pd
 
 def merge_geojson(input_folder, output_file):
     # Get a list of all GeoJSON files in the folder
@@ -10,20 +11,25 @@ def merge_geojson(input_folder, output_file):
         print("No GeoJSON files found in the folder.")
         return
 
-    # Initialize an empty GeoDataFrame to store the merged data
-    merged_gdf = gpd.GeoDataFrame()
+    # Initialize an empty list to store GeoDataFrames
+    gdf_list = []
 
     # Iterate through each GeoJSON file and merge it
     for file_name in geojson_files:
         file_path = os.path.join(input_folder, file_name)
         gdf = gpd.read_file(file_path)
-        merged_gdf = merged_gdf.append(gdf, ignore_index=True)
+        gdf_list.append(gdf)
+
+    # Concatenate the list of GeoDataFrames
+    merged_gdf = gpd.GeoDataFrame(pd.concat(gdf_list, ignore_index=True), crs=gdf_list[0].crs)
 
     # Save the merged GeoDataFrame to a new GeoJSON file
     merged_gdf.to_file(output_file, driver='GeoJSON')
     print(f'Merged data saved to {output_file}')
 
-# Usage example:
-input_folder = '/path/to/your/input/folder'
-output_file = '/path/to/your/output/merged.geojson'
+
+input_folder = 'C:\\2023\\Soajo_JOM\\DATA\\MaxarFootprints_PT'
+output_file = 'C:\\2023\\Soajo_JOM\\DATA\\MaxarFootprints_PT\\geojson_merged\\maxar_footprints.geojson'
+
 merge_geojson(input_folder, output_file)
+
