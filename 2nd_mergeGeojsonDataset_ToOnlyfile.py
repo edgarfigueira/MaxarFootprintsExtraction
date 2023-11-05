@@ -28,8 +28,8 @@ def merge_geojson(input_folder, output_file):
     print(f'Merged data saved to {output_file}')
 
 
-input_folder = 'C:\\2023\\Soajo_JOM\\DATA\\MaxarFootprints_PT'
-output_file = 'C:\\2023\\Soajo_JOM\\DATA\\MaxarFootprints_PT\\geojson_merged\\maxar_footprints.geojson'
+input_folder = r'MaxarFootprints'
+output_file = r'geojson_merged\\footprints.geojson'
 
 merge_geojson(input_folder, output_file)
 
